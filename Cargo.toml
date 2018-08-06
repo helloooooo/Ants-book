@@ -1,0 +1,12 @@
+[package]
+name = "Ants-book"
+version = "0.1.0"
+authors = ["helloooooo <yomicerisier@gmail.com>"]
+[[bin]]
+name = "fact"
+[[bin]]
+name = "fib"
+[[bin]]
+name = "partial_sum"
+[dependencies]
+
