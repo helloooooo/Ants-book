@@ -8,5 +8,11 @@ name = "fact"
 name = "fib"
 [[bin]]
 name = "partial_sum"
+[[bin]]
+name = "lake_counting"
+[[bin]]
+name = "maze"
+[[bin]]
+name = "coin"
 [dependencies]
 
