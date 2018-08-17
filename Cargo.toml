@@ -16,5 +16,9 @@ name = "maze"
 name = "coin"
 [[bin]]
 name = "schedule"
+[[bin]]
+name = "bestcowline"
+[[bin]]
+name = "sarumanarmy"
 [dependencies]
 
