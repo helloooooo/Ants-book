@@ -20,5 +20,7 @@ name = "schedule"
 name = "bestcowline"
 [[bin]]
 name = "sarumanarmy"
+[[bin]]
+name = "fence_repair"
 [dependencies]
 

@@ -1,8 +1,5 @@
 mod scaneer;
-
 use scaneer::*;
-
-
 fn main(){
     let n = read::<i64>();
     let s = read::<String>();
