@@ -22,5 +22,7 @@ name = "bestcowline"
 name = "sarumanarmy"
 [[bin]]
 name = "fence_repair"
+[[bin]]
+name = "napsack"
 [dependencies]
 
