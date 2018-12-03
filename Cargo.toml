@@ -24,5 +24,7 @@ name = "sarumanarmy"
 name = "fence_repair"
 [[bin]]
 name = "napsack"
+[[bin]]
+name = "insertionsort"
 [dependencies]
 
