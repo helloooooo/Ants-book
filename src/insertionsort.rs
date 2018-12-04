@@ -13,31 +13,34 @@ fn read_vec2<T: std::str::FromStr>(n: u32) -> Vec<Vec<T>> {
     (0..n).map(|_| read_vec()).collect()
 }
 fn main(){
-    let mut v = read_vec::<i64>();
+    let v = read_vec::<i64>();
     let l = v.clone().len();
-    let ans = insertion_sort(v,l);
+    let ans = insertion_sort(v,l as i64);
     println!("---------");
     println!("{:?}",ans);
 }
-fn insertion_sort(mut a:Vec<i64>,n:usize) -> Vec<i64>{
-    for i in 1..(n as usize) {
-        let v = a[i];
-        let mut j = i - 1;
-        while j >= 0 &&  a[j] > v {
-            a[j + 1] = a[j];
+fn insertion_sort(mut a:Vec<i64>,n:i64) -> Vec<i64>{
+    for i in 1..n {
+        let v = a[i as usize];
+        let mut j:i64 = i - 1;
+        while j >= 0 &&  a[j as usize] > v {
+            println!("j:{}",j);
+            a[j as usize + 1] = a[j as usize];
+            println!("1");
             j -= 1;
         }
-        a[j + 1] = v;
-        println!("{:?}",a);
+        a[(j + 1) as usize] = v;
     }
     a
 }
-
+#[cfg(test)]
 #[test]
 fn ins1(){
     // let mut v = read_vec::<i64>();
-    let mut v = vec![8,3,1,5,2,1];
-    let ans = insertionSort(v,v.len());
-    v.sort();
-    assert_eq!(ans,v);
+    let v = vec![8,3,1,5,2,1];
+    let mut sub = v.clone();
+    let l = v.clone().len();
+    let ans = insertion_sort(v,l as i64);
+    sub.sort();
+    assert_eq!(ans,sub);
 }
