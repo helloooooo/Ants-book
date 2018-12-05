@@ -19,7 +19,7 @@ fn main(){
     println!("---------");
     println!("{:?}",ans);
 }
-fn insertion_sort(mut a:Vec<i64>,n:i64) -> Vec<i64>{
+pub fn insertion_sort(mut a:Vec<i64>,n:i64) -> Vec<i64>{
     for i in 1..n {
         let v = a[i as usize];
         let mut j:i64 = i - 1;
