@@ -22,4 +22,18 @@ mod tests{
         v.sort();
         assert_eq!(bubble_sort(vec![5,3,2,4,1],5), v);
     }
+    #[test]
+    fn select(){
+        use Ants_book::selection_sort::*;
+        let mut v = vec![5,6,4,2,1,3];
+        v.sort();
+        assert_eq!(vec![1,2,3,4,5,6],v);
+    }
+    #[test]
+    fn stack_test(){
+        use Ants_book::stack::*;
+        let v = vec!['1','2','+','3','4','-','*'];
+        assert_eq!(stack(v,6),-3);
+    }
+
 }
