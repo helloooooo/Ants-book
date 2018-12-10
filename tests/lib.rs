@@ -35,5 +35,12 @@ mod tests{
         let v = vec!['1','2','+','3','4','-','*'];
         assert_eq!(stack(v,6),-3);
     }
+    
+    fn que_test(){
+        use Ants_book::que;
+        let v = vec![("p1".to_string(),150),("p2",80),("p3",200),("p4",250),("p5",20)];
+        let ans = que::que(v, 5, 100);
+        assert_eq!(ans, )
+    }
 
 }
