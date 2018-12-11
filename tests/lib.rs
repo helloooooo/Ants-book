@@ -54,5 +54,10 @@ mod tests {
         ];
         assert_eq!(ans,sub);
     }
-
+    #[test]
+    fn list_test() {
+        use Ants_book::linked_list::*;
+        let v = vec!['b','c','d'];
+        assert_eq!(v,list())
+    }
 }
