@@ -1,0 +1,59 @@
+# Docker image
+# Build a Docker image to deploy, run, or push to a container registry.
+# Add steps that use Docker Compose, tag images, push to a registry, run an image, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+# 使用するコンテナを列挙する
+resources:
+  containers:
+    - container: rust
+      image: rust:latest
+
+jobs:
+  - job: Linux
+    pool:
+      vmImage: 'ubuntu-16.04'
+    # Travis CI でいう build matrix のようなもの
+    # rust_toolchain の値は環境変数を介してスクリプト内で使用できる
+    strategy:
+      matrix:
+        stable:
+          rust_toolchain: stable
+        beta:
+          rust_toolchain: beta
+        nightly:
+          rust_toolchain: nightly
+        minimum_supported:
+          rust_toolchain: 1.30.0
+
+    # 実行するスクリプトを列挙する
+    steps:
+      - script: |
+          curl -sSf https://sh.rustup.rs | sh -s -- --default-toolchain $RUST_TOOLCHAIN -y
+          echo "##vso[task.setvariable variable=PATH;]$PATH:$HOME/.cargo/bin"
+        displayName: install rustup
+
+      - script: cargo test --verbose
+        displayName: run test
+
+  # Windows を使用する例
+  - job: Windows
+    steps:
+      - script: |
+          curl -sSf -o rustup-init.exe https://win.rustup.rs
+          rustup-init.exe -y --default-toolchain stable
+          set PATH=%PATH%;%USERPROFILE%\.cargo\bin 
+          echo '##vso[task.setvariable variable=PATH;]%PATH%;%USERPROFILE%\.cargo\bin'
+        displayName: install rustup on Windows
+
+      - script: cargo test --verbose
+        displayName: run test
+
+  # コンテナを使用する例
+  # コンテナを使用する場合、vmImage は 'ubuntu-16.04' を指定する必要がある
+  - job: Linux_container
+    pool:
+      vmImage: 'ubuntu-16.04'
+    container: rust # 上に列挙したコンテナを指定する
+    steps:
+      - script: cargo test --verbose
