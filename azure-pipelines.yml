@@ -37,17 +37,17 @@ jobs:
         displayName: run test
 
   # Windows を使用する例
-  - job: Windows
-    steps:
-      - script: |
-          curl -sSf -o rustup-init.exe https://win.rustup.rs
-          rustup-init.exe -y --default-toolchain stable
-          set PATH=%PATH%;%USERPROFILE%\.cargo\bin 
-          echo '##vso[task.setvariable variable=PATH;]%PATH%;%USERPROFILE%\.cargo\bin'
-        displayName: install rustup on Windows
+  # - job: Windows
+  #   steps:
+  #     - script: |
+  #         curl -sSf -o rustup-init.exe https://win.rustup.rs
+  #         rustup-init.exe -y --default-toolchain stable
+  #         set PATH=%PATH%;%USERPROFILE%\.cargo\bin 
+  #         echo '##vso[task.setvariable variable=PATH;]%PATH%;%USERPROFILE%\.cargo\bin'
+  #       displayName: install rustup on Windows
 
-      - script: cargo test --verbose
-        displayName: run test
+  #     - script: cargo test --verbose
+  #       displayName: run test
 
   # コンテナを使用する例
   # コンテナを使用する場合、vmImage は 'ubuntu-16.04' を指定する必要がある
