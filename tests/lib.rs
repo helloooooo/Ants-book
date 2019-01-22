@@ -60,4 +60,9 @@ mod tests {
         let v = vec!['b','c','d'];
         assert_eq!(v,list())
     }
+    #[test]
+    fn liner_search(){
+        use Ants_book::liner_search::*;
+        assert_eq!(linerSearch(5,vec![1,2,3,4,5],3,vec![3,4,1]),3);
+    }
 }
