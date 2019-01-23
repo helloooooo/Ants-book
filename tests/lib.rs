@@ -65,4 +65,9 @@ mod tests {
         use Ants_book::liner_search::*;
         assert_eq!(linerSearch(5,vec![1,2,3,4,5],3,vec![3,4,1]),3);
     }
+    #[test]
+    fn binary_search(){
+        use Ants_book::binary_search::*;
+        assert_eq!(binary_search(5,vec![1,2,3,4,5],3,vec![3,4,1]),3);
+    }
 }

@@ -2,6 +2,9 @@
 name = "Ants-book"
 version = "0.1.0"
 authors = ["helloooooo <yomicerisier@gmail.com>"]
+
+[[bin]]
+name = "binary_search"
 # [[bin]]
 # name = "fact"
 # [[bin]]
@@ -26,5 +29,6 @@ authors = ["helloooooo <yomicerisier@gmail.com>"]
 # name = "napsack"
 # [[bin]]
 # name = "insertionsort"
+
 [dependencies]
 

@@ -6,3 +6,4 @@ pub mod stack;
 pub mod linked_list;
 pub mod liner_search;
 pub mod scaneer;
+pub mod binary_search;
