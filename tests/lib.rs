@@ -70,4 +70,9 @@ mod tests {
         use Ants_book::binary_search::*;
         assert_eq!(binary_search(5,vec![1,2,3,4,5],3,vec![3,4,1]),3);
     }
+    #[test]
+    fn iter_test(){
+        use Ants_book::iterator::*;
+        assert_eq!(("2014".to_string(),"3125".to_string()),iterators(vec!['2','0','1','4']));
+    }
 }
