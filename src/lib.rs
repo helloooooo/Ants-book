@@ -9,3 +9,5 @@ pub mod scaneer;
 pub mod binary_search;
 pub mod iterator;
 pub mod lower_bound;
+pub mod Exhaustive_serach;
+pub mod partition;
